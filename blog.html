@@ -27,13 +27,171 @@
         </nav>
     </header>
     <!-- M ain Section -->
-    <main class="mx-16 mb-32">
+    <main class="max-w-5xl mx-auto mb-32 text-justify">
+        <!-- Article 1 -->
+        <article>
+            <h2 class="font-bold text-5xl text-gray-700 mt-16 mb-8">Discuss the scope of var, let, and const</h2>
+            <h3 class="font-semibold text-3xl text-gray-700 mt-10 mb-3">var:</h3>
+            <ul class="text-xl list-disc ml-5">
+                <li class="mb-4">
+                    var declarations are function-scoped, meaning they are limited in scope to the function in which
+                    they are declared.
+                </li>
+                <li class="mb-4">
+                    Variables declared with var are hoisted to the top of their function or global scope, which means
+                    they can be accessed before they are declared, but their value will be undefined until the actual
+                    declaration is reached.
 
-        <h2>Discuss the scope of var, let, and const</h2>
+                </li>
+            </ul>
+
+            <h3 class="font-semibold text-3xl text-gray-700 mt-10 mb-3">let:</h3>
+            <ul class="text-xl list-disc ml-5">
+                <li class="mb-4">
+                    let declarations are block-scoped, meaning they are limited in scope to the nearest enclosing block,
+                    such as a loop or an if statement.
+                </li>
+
+                <li class="mb-4">
+                    Variables declared with let are not hoisted to the top of the block; they are only accessible after
+                    the point at which they are declared.
+
+                </li>
+
+            </ul>
+
+            <h3 class="font-semibold text-3xl text-gray-700 mt-10 mb-3">const:</h3>
+            <ul class="text-xl list-disc ml-5">
+
+                <li class="mb-4">
+                    const declarations are also block-scoped, just like let.
+                </li>
+
+                <li class="mb-4">
+                    The key difference is that const variables cannot be reassigned after their initial assignment.
+                    However, if the value assigned is an object or array, the properties or elements of the object or
+                    array can still be modified.
+
+                </li>
+            </ul>
+
+            <figure>
+                <img class="w-full border-2 mt-8" src="./images/var-let-const.png" alt="var-let-const">
+                <figcaption class="mb-8">Fig. 1: var, let and const</figcaption>
+            </figure>
+        </article>
+
+        <!-- Article 2 -->
+        <article>
+            <h2 class="font-bold text-5xl text-gray-700 mt-16 mb-8">Tell us the use cases of null and undefined</h2>
+
+            <h3 class="font-semibold text-3xl text-gray-700 mt-10 mb-3">null:</h3>
+            <ul class="text-xl list-disc ml-5">
+                <li>
+                    null is a deliberate assignment value representing the absence of any object value. It's often
+                    used when you want to indicate that a variable or property should have no value or that it's
+                    intentionally empty.
+
+                    javascript
+                    Copy code
+                    let myVar = null; // Explicitly setting a variable to have no value.
+                </li>
+            </ul>
+
+            <h3 class="font-semibold text-3xl text-gray-700 mt-10 mb-3">undefined:</h3>
+            <ul class="text-xl list-disc ml-5">
+                <li>
+                    undefined is a primitive value that typically represents the unintentional absence of
+                    a
+                    value. Variables that are declared but not initialized, function parameters that are not
+                    provided,
+                    or non-existent object properties have the value undefined.
 
 
-        <h2>Tell us the use cases of null and undefined</h2>
-        <h2>What do you mean by REST API?</h2>
+                    let x; // x is undefined because it's declared but not assigned a value.
+
+                </li>
+            </ul>
+
+            <figure>
+                <img class="w-full border-2 mt-8" src="./images/null-undefined.png" alt="null-vs-undefined">
+                <figcaption class="mb-8">Fig. 2: null vs undefined</figcaption>
+            </figure>
+        </article>
+
+
+        <!-- Article 3 -->
+        <article>
+            <h2 class="font-bold text-5xl text-gray-700 mt-16 mb-8">What do you mean by REST API?</h2>
+            <!-- <h3 class="font-semibold text-3xl text-gray-700 mt-10 mb-3">const:</h3> -->
+
+            <p class="text-xl mb-4">
+                REST (Representational State Transfer) API is an architectural style for designing networked
+                applications.
+                It's based on a set of principles and constraints that emphasize a stateless client-server interaction,
+                scalability, and simplicity. Some key characteristics and concepts of REST APIs include:
+
+            </p>
+
+
+
+
+            <ul class="text-xl list-disc ml-5">
+
+                <li class="mb-4">
+                    Statelessness: Each request from a client to a server must contain all the information needed to
+                    understand
+                    and fulfill the request. The server should not rely on any previous requests or stored client state.
+
+                </li>
+
+                <li class="mb-4">
+
+                    Resources: Resources are the key abstractions in REST. Each resource is identified by a unique URI
+                    (Uniform
+                    Resource Identifier) and can be manipulated using standard HTTP methods like GET, POST, PUT, DELETE.
+                </li>
+
+                <li class="mb-4">
+
+                    HTTP Methods: REST APIs use standard HTTP methods for CRUD (Create, Read, Update, Delete) operations
+                    on
+                    resources. For example, GET for retrieving data, POST for creating new data, PUT for updating data,
+                    and
+                    DELETE for removing data.
+                </li>
+
+                <li class="mb-4">
+
+                    Stateless Communication: REST APIs use stateless communication, meaning that each request from a
+                    client to a
+                    server is independent, and the server doesn't maintain any client state between requests. This makes
+                    the API
+                    scalable and easy to cache.
+                </li>
+
+                <li class="mb-4">
+
+                    JSON or XML: Data is typically exchanged between the client and server in a format like JSON or XML,
+                    making
+                    it easy for different systems to understand and work with the data.
+                </li>
+
+                <li class="mb-4">
+                    RESTful APIs are widely used for building web services and are the foundation of many web
+                    applications and
+                    services, providing a straightforward and scalable way to interact with data over the internet.
+
+                </li>
+            </ul>
+
+
+            <figure>
+                <img class="w-full border-2 mt-8" src="./images/rest-api.png" alt="rest-api">
+                <figcaption class="mb-8">Fig. 3: REST API</figcaption>
+            </figure>
+        </article>
+
 
     </main>
 
