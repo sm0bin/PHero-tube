@@ -11,7 +11,6 @@ function getById(id) {
     return document.getElementById(id);
 }
 
-
 function showCategoryBtn(data) {
     data.forEach(element => {
         const btn = `<button class="bg-gray-300 px-8 py-2.5 rounded font-medium text-lg text-gray-700"  onclick="fetchCategoryVideos(${element.category_id})">${element.category}</button>`;
@@ -21,17 +20,33 @@ function showCategoryBtn(data) {
 
 }
 
-function fetchCategoryVideos(id) {
+let categoryId = 1000;
+function fetchCategoryVideos(id, isSorted) {
     fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`)
         .then(res => res.json())
-        .then(json => showCategoryVideos(json.data))
+        .then(json => showCategoryVideos(json.data, isSorted))
+    categoryId = id;
     // .then(json => console.log(json.data))
 
 }
 
-function showCategoryVideos(data) {
+function getViewCount(element) {
+    // data.sort((a.others.views, b.others.views) => b.others.views - a.others.views)
+    // data.forEach(element => {
+
+    // });
+    const subString = element.others.views.split("K");
+    return parseFloat(subString[0]);
+}
+// getViewCount("100K")
+
+function showCategoryVideos(data, isSorted) {
+    if (isSorted) {
+        data.sort((a, b) => getViewCount(b) - getViewCount(a));
+    }
 
     getById("videoContainer").innerHTML = "";
+
     if (!data.length) {
         getById("noContent").innerHTML = `
             <img class="mx-auto mb-10" src="./images/Icon.png" alt="">
@@ -40,7 +55,10 @@ function showCategoryVideos(data) {
     } else {
         getById("noContent").innerHTML = "";
     }
+
+    console.log((data));
     data.forEach(element => {
+        // console.log(sortVideos(element));
         const video = `
                 <div>
                     <div class="relative">
@@ -65,7 +83,7 @@ function showCategoryVideos(data) {
                 </div>
             `;
         getById("videoContainer").innerHTML += video;
-        console.log(element);
+        // console.log(element);
     });
 }
 
@@ -84,4 +102,8 @@ fetchCategoryVideos(1000)
 
 getById("blog").addEventListener("click", () => {
     window.location.assign("./blog.html");
-})
+});
+
+getById("sortBtn").addEventListener("click", () => {
+    fetchCategoryVideos(categoryId, true);
+});
