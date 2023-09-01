@@ -17,7 +17,6 @@ function showCategoryBtn(data) {
         getById("showCategoryParent").innerHTML += btn;
         // console.log(element.category_id);
     });
-
 }
 
 let categoryId = 1000;
