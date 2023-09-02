@@ -1,51 +1,81 @@
-// console.log("hola");
+// Blog Button
+getById("blog").addEventListener("click", () => {
+    window.location.assign("./blog.html");
+});
 
-function fetchCategories() {
-    fetch("https://openapi.programming-hero.com/api/videos/categories")
-        .then(res => res.json())
-        // .then(data => console.log(data.data))
-        .then(data => showCategoryBtn(data.data))
-}
+// Sort Button
+getById("sortBtn").addEventListener("click", () => {
+    fetchCategoryVideos(categoryId, true);
+});
 
+// Get Element By ID function
 function getById(id) {
     return document.getElementById(id);
 }
 
-function showCategoryBtn(data) {
-    data.forEach(element => {
-        const btn = `<button class="bg-gray-300 px-8 py-2.5 rounded font-medium text-lg text-gray-700"  onclick="fetchCategoryVideos(${element.category_id})">${element.category}</button>`;
-        getById("showCategoryParent").innerHTML += btn;
-        // console.log(element.category_id);
-    });
+// Getting View Count function
+function getViewCount(element) {
+    const subString = element.others.views.split("K");
+    return parseFloat(subString[0]);
 }
 
+// Time Converter function
+function timeConverter(sec) {
+    const hour = sec / 3600;
+    const minutes = (sec % 3600) / 60;
+
+    return `${Math.round(hour)}hrs ${Math.round(minutes)}min ago`;
+}
+
+
+
+// Category Buttons Adding
+// #######################################
+// Fetching Categories
+fetchCategories();
+function fetchCategories() {
+    fetch("https://openapi.programming-hero.com/api/videos/categories")
+        .then(res => res.json())
+        .then(data => showCategoryBtn(data.data))
+}
+
+
+// Sowing Category Buttons
+// let allBtn;
+function showCategoryBtn(data) {
+    data.forEach(element => {
+        const btn = `<button class="bg-gray-300 px-8 py-2.5 rounded font-medium text-lg text-gray-700 show-category-btn"  onclick="fetchCategoryVideos(${element.category_id}, false)">${element.category}</button>`;
+        getById("showCategoryParent").innerHTML += btn;
+    });
+}
+// #######################################
+
+
+
 let categoryId = 1000;
+fetchCategoryVideos(1000, false);
+
+// Showing Category Videos
+// #######################################
+// Fetching Category Videos
 function fetchCategoryVideos(id, isSorted) {
     fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`)
         .then(res => res.json())
         .then(json => showCategoryVideos(json.data, isSorted))
     categoryId = id;
-    // .then(json => console.log(json.data))
-
 }
 
-function getViewCount(element) {
-    // data.sort((a.others.views, b.others.views) => b.others.views - a.others.views)
-    // data.forEach(element => {
 
-    // });
-    const subString = element.others.views.split("K");
-    return parseFloat(subString[0]);
-}
-// getViewCount("100K")
-
+// Showing Category Videos
 function showCategoryVideos(data, isSorted) {
+    // Sorting
     if (isSorted) {
         data.sort((a, b) => getViewCount(b) - getViewCount(a));
     }
 
     getById("videoContainer").innerHTML = "";
 
+    // No Content Page
     if (!data.length) {
         getById("noContent").innerHTML = `
             <img class="mx-auto mb-10" src="./images/Icon.png" alt="">
@@ -55,15 +85,12 @@ function showCategoryVideos(data, isSorted) {
         getById("noContent").innerHTML = "";
     }
 
-    console.log((data));
     data.forEach(element => {
-        // console.log(sortVideos(element));
         const video = `
                 <div>
                     <div class="relative">
                         <img class="rounded-lg w-full h-60 object-cover" src="${element.thumbnail}" alt="">
-                        ${element.others.posted_date ? `<div class="p-2 rounded bg-gray-950 text-white absolute bottom-3 right-3">${timeConverter(element.others.posted_date)}</div>` : ""
-            }
+                        ${element.others.posted_date ? `<div class="p-2 rounded bg-gray-950 text-white absolute bottom-3 right-3">${timeConverter(element.others.posted_date)}</div>` : ""}
                     </div>
 
                     <div class="flex gap-5 mt-6">
@@ -82,27 +109,7 @@ function showCategoryVideos(data, isSorted) {
                 </div>
             `;
         getById("videoContainer").innerHTML += video;
-        // console.log(element);
     });
 }
+// #######################################
 
-function timeConverter(sec) {
-    const hour = sec / 3600;
-    const minutes = (sec % 3600) / 60;
-
-    return `${Math.round(hour)}hrs ${Math.round(minutes)}min ago`;
-}
-
-// console.log(timeConverter(15147));
-
-fetchCategories()
-fetchCategoryVideos(1000)
-
-
-getById("blog").addEventListener("click", () => {
-    window.location.assign("./blog.html");
-});
-
-getById("sortBtn").addEventListener("click", () => {
-    fetchCategoryVideos(categoryId, true);
-});

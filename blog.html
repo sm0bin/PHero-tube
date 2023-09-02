@@ -19,15 +19,15 @@
 <body>
 
     <!-- Header Section -->
-    <header class="mt-12 mx-16 mb-16">
+    <header class="mx-5 md:mx-8 lg:mx-16 mt-12 mb-16">
         <nav class="flex items-center justify-between">
             <img id="home" src="./images/Logo.png" alt="">
             <!-- <button class="bg-gray-300 px-5 py-2.5 rounded font-medium text-lg text-gray-700">Sort by view</button> -->
-            <button class="bg-red-500 px-5 py-2.5 rounded font-medium text-lg text-white">Blog</button>
+            <button id="blog" class="bg-red-500 px-5 py-2.5 rounded font-medium text-lg text-white">Blog</button>
         </nav>
     </header>
     <!-- M ain Section -->
-    <main class="max-w-5xl mx-auto mb-32 text-justify">
+    <main class="max-w-3xl mx-5 md:mx-8 lg:mx-auto mb-32 text-justify">
         <!-- Article 1 -->
         <article>
             <h2 class="font-bold text-5xl text-gray-700 mt-16 mb-8">Discuss the scope of var, let, and const</h2>
@@ -97,13 +97,14 @@
                     </p>
 
                     <br>
-                    <code class="bg-gray-900 text-white p-5">
-                        <bold class="font-semibold mt-6">Example: </bold> let myVar = null; // Explicitly setting a variable
+                    <div class="bg-gray-900 text-white p-5">
+                        <bold class="font-semibold mt-6">Example: </bold> let myVar = null; // Explicitly setting a
+                        variable
                         to
                         have
                         no value.
 
-                    </code>
+                    </div>
                 </li>
             </ul>
 
@@ -119,12 +120,13 @@
                     </p>
 
                     <br>
-                    <code class="bg-gray-900 text-white p-5">
-                        <bold class="font-semibold mt-6">Example: </bold> let x; // x is undefined because it's declared but
+                    <div class="bg-gray-900 text-white p-5">
+                        <bold class="font-semibold mt-6">Example: </bold> let x; // x is undefined because it's declared
+                        but
                         not
                         assigned a value.
 
-                    </code>
+                    </div>
 
                 </li>
             </ul>
@@ -157,7 +159,8 @@
             <ul class="text-xl list-disc ml-5">
 
                 <li class="mb-4">
-                    Statelessness: Each request from a client to a server must contain all the information needed to
+                    <bold class="font-semibold mt-6">Statelessness:</bold> Each request from a client to a server must
+                    contain all the information needed to
                     understand
                     and fulfill the request. The server should not rely on any previous requests or stored client state.
 
@@ -165,14 +168,16 @@
 
                 <li class="mb-4">
 
-                    Resources: Resources are the key abstractions in REST. Each resource is identified by a unique URI
+                    <bold class="font-semibold mt-6">Resources:</bold> Resources are the key abstractions in REST. Each
+                    resource is identified by a unique URI
                     (Uniform
                     Resource Identifier) and can be manipulated using standard HTTP methods like GET, POST, PUT, DELETE.
                 </li>
 
                 <li class="mb-4">
 
-                    HTTP Methods: REST APIs use standard HTTP methods for CRUD (Create, Read, Update, Delete) operations
+                    <bold class="font-semibold mt-6">HTTP Methods:</bold> REST APIs use standard HTTP methods for CRUD
+                    (Create, Read, Update, Delete) operations
                     on
                     resources. For example, GET for retrieving data, POST for creating new data, PUT for updating data,
                     and
@@ -181,7 +186,8 @@
 
                 <li class="mb-4">
 
-                    Stateless Communication: REST APIs use stateless communication, meaning that each request from a
+                    <bold class="font-semibold mt-6">Stateless Communication:</bold> REST APIs use stateless
+                    communication, meaning that each request from a
                     client to a
                     server is independent, and the server doesn't maintain any client state between requests. This makes
                     the API
@@ -190,18 +196,19 @@
 
                 <li class="mb-4">
 
-                    JSON or XML: Data is typically exchanged between the client and server in a format like JSON or XML,
+                    <bold class="font-semibold mt-6">JSON or XML:</bold> Data is typically exchanged between the client
+                    and server in a format like JSON or XML,
                     making
                     it easy for different systems to understand and work with the data.
                 </li>
 
-                <li class="mb-4">
-                    RESTful APIs are widely used for building web services and are the foundation of many web
-                    applications and
-                    services, providing a straightforward and scalable way to interact with data over the internet.
-
-                </li>
             </ul>
+            <p class="mb-4 text-xl">
+                RESTful APIs are widely used for building web services and are the foundation of many web
+                applications and
+                services, providing a straightforward and scalable way to interact with data over the internet.
+
+            </p>
 
 
             <figure>
@@ -215,7 +222,6 @@
 
 
     <!-- Scripts -->
-    <script src="./script.js"></script>
     <script src="./blog.js"></script>
 </body>
 

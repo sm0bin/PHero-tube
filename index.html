@@ -19,8 +19,8 @@
 <body>
 
     <!-- Header Section -->
-    <header class="mt-12 mx-16 mb-16">
-        <nav class="flex items-center justify-between">
+    <header class="mx-5 md:mx-8 lg:mx-16 mt-12 mb-16">
+        <nav class="flex flex-col md:flex-row gap-5 items-center justify-between">
             <img id="home" src="./images/Logo.png" alt="">
             <button id="sortBtn" class="bg-gray-300 px-5 py-2.5 rounded font-medium text-lg text-gray-700">Sort by
                 view</button>
@@ -29,9 +29,10 @@
     </header>
 
     <!-- M ain Section -->
-    <main class="mx-16 mb-32">
+    <main class="mx-5 md:mx-8 lg:mx-16 mb-32">
         <!-- Category Buttons -->
-        <div id="showCategoryParent" class="flex items-center justify-center gap-10 mb-10">
+        <div id="showCategoryParent"
+            class="flex flex-col md:flex-row gap-5 items-center justify-center md:gap-10 mb-10">
             <!-- <button class="bg-gray-300 px-5 py-2.5 rounded font-medium text-lg text-gray-700"
                 onclick="showCategoryVideos(element.category_id)">Sort by view</button> -->
         </div>
