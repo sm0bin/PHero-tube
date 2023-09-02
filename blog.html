@@ -5,19 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-        * {
-            font-family: 'Inter', sans-serif;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
     <title>PHero Tube | Blog</title>
 </head>
 
 <body>
-
     <!-- Header Section -->
     <header class="mx-5 md:mx-8 lg:mx-16 mt-12 mb-16">
         <nav class="flex items-center justify-between">
@@ -26,11 +18,18 @@
             <button id="blog" class="bg-red-500 px-5 py-2.5 rounded font-medium text-lg text-white">Blog</button>
         </nav>
     </header>
+
     <!-- M ain Section -->
     <main class="max-w-3xl mx-5 md:mx-8 lg:mx-auto mb-32 text-justify">
         <!-- Article 1 -->
         <article>
             <h2 class="font-bold text-5xl text-gray-700 mt-16 mb-8">Discuss the scope of var, let, and const</h2>
+
+            <figure>
+                <img class="w-full border-2 mt-8" src="./images/var-let-const.png" alt="var-let-const">
+                <figcaption class="mb-8">Fig. 1: var, let and const</figcaption>
+            </figure>
+
             <h3 class="font-semibold text-3xl text-gray-700 mt-10 mb-3">var:</h3>
             <ul class="text-xl list-disc ml-5">
                 <li class="mb-4">
@@ -75,10 +74,6 @@
                 </li>
             </ul>
 
-            <figure>
-                <img class="w-full border-2 mt-8" src="./images/var-let-const.png" alt="var-let-const">
-                <figcaption class="mb-8">Fig. 1: var, let and const</figcaption>
-            </figure>
         </article>
 
         <hr class="my-20 border-gray-950">
@@ -87,139 +82,181 @@
         <article>
             <h2 class="font-bold text-5xl text-gray-700 mt-16 mb-8">Tell us the use cases of null and undefined</h2>
 
-            <h3 class="font-semibold text-3xl text-gray-700 mt-10 mb-3">null:</h3>
-            <ul class="text-xl list-disc ml-5">
-                <li>
-                    <p>
-                        null is a deliberate assignment value representing the absence of any object value. It's often
-                        used when you want to indicate that a variable or property should have no value or that it's
-                        intentionally empty.
-                    </p>
-
-                    <br>
-                    <div class="bg-gray-900 text-white p-5">
-                        <bold class="font-semibold mt-6">Example: </bold> let myVar = null; // Explicitly setting a
-                        variable
-                        to
-                        have
-                        no value.
-
-                    </div>
-                </li>
-            </ul>
-
-            <h3 class="font-semibold text-3xl text-gray-700 mt-10 mb-3">undefined:</h3>
-            <ul class="text-xl list-disc ml-5">
-                <li>
-                    <p>
-                        undefined is a primitive value that typically represents the unintentional absence of
-                        a
-                        value. Variables that are declared but not initialized, function parameters that are not
-                        provided,
-                        or non-existent object properties have the value undefined.
-                    </p>
-
-                    <br>
-                    <div class="bg-gray-900 text-white p-5">
-                        <bold class="font-semibold mt-6">Example: </bold> let x; // x is undefined because it's declared
-                        but
-                        not
-                        assigned a value.
-
-                    </div>
-
-                </li>
-            </ul>
-
             <figure>
                 <img class="w-full border-2 mt-8" src="./images/null-undefined.png" alt="null-vs-undefined">
                 <figcaption class="mb-8">Fig. 2: null vs undefined</figcaption>
             </figure>
+
+            <h3 class="font-semibold text-3xl text-gray-700 mt-10 mb-3">null:</h3>
+            <p>
+                null is a deliberate assignment value representing the absence of any object value. It's often
+                used when you want to indicate that a variable or property should have no value or that it's
+                intentionally empty.
+            </p>
+
+            <div class="bg-gray-900 text-white p-5 mt-4">
+                <bold class="font-semibold mt-6">Example: </bold> let myVar = null; // Explicitly setting a
+                variable
+                to
+                have
+                no value.
+
+            </div>
+            </ul>
+
+            <h3 class="font-semibold text-3xl text-gray-700 mt-10 mb-3">undefined:</h3>
+            <p>
+                undefined is a primitive value that typically represents the unintentional absence of
+                a
+                value. Variables that are declared but not initialized, function parameters that are not
+                provided,
+                or non-existent object properties have the value undefined.
+            </p>
+
+            <div class="bg-gray-900 text-white p-5 mt-4">
+                <bold class="font-semibold mt-6">Example: </bold> let x; // x is undefined because it's declared
+                but
+                not
+                assigned a value.
+
+            </div>
+
+            </ul>
+
+
         </article>
 
         <hr class="my-20 border-gray-950">
 
-
         <!-- Article 3 -->
         <article>
             <h2 class="font-bold text-5xl text-gray-700 mt-16 mb-8">What do you mean by REST API?</h2>
-            <!-- <h3 class="font-semibold text-3xl text-gray-700 mt-10 mb-3">const:</h3> -->
+
+            <figure>
+                <img class="w-full border-2 mt-8" src="./images/rest-api.png" alt="rest-api">
+                <figcaption class="mb-8">Fig. 3: REST API</figcaption>
+            </figure>
 
             <p class="text-xl mb-4">
-                REST (Representational State Transfer) API is an architectural style for designing networked
-                applications.
-                It's based on a set of principles and constraints that emphasize a stateless client-server interaction,
-                scalability, and simplicity. Some key characteristics and concepts of REST APIs include:
+
+                <bold class="font-semibold mt-6">Definition:</bold> A REST API is an architectural style for designing
+                networked applications. It is not a
+                programming language or framework; instead, it's a set of principles and constraints that define how web
+                services should be structured and how data should be exchanged over the internet.
+            </p>
+            <p class="text-xl mb-4">
+                REST technology is often favored over the more complex Simple Object Access Protocol (SOAP) due to its
+                efficiency in terms of bandwidth usage and its simplicity and flexibility, making it particularly
+                suitable for internet-based applications. REST is primarily used to request or provide information from
+                a web service, and all communication within a REST API is exclusively based on HTTP requests.
+            </p>
+            <p class="text-xl mb-4">
+                <bold class="font-semibold mt-6">Here's how it works:</bold> A client sends a request to a server in the
+                form of a web URL using HTTP
+                methods
+                like GET, POST, PUT, or DELETE. Subsequently, the server responds with a resource, which can take
+                various forms such as HTML, XML, images, or JSON. JSON has become the most prevalent format in modern
+                web services.
 
             </p>
 
-
-
+            <p class=" text-xl mb-4">
+                <bold class="font-semibold mt-6">Key Principles:</bold> Some key characteristics and concepts of REST
+                APIs include:
+            </p>
 
             <ul class="text-xl list-disc ml-5">
 
                 <li class="mb-4">
                     <bold class="font-semibold mt-6">Statelessness:</bold> Each request from a client to a server must
-                    contain all the information needed to
-                    understand
-                    and fulfill the request. The server should not rely on any previous requests or stored client state.
+                    contain all the information needed to understand and fulfill the request. The server should not rely
+                    on any previous requests or stored client state.
 
                 </li>
 
                 <li class="mb-4">
 
                     <bold class="font-semibold mt-6">Resources:</bold> Resources are the key abstractions in REST. Each
-                    resource is identified by a unique URI
-                    (Uniform
-                    Resource Identifier) and can be manipulated using standard HTTP methods like GET, POST, PUT, DELETE.
+                    resource is identified by a unique URI (Uniform Resource Identifier) and can be manipulated using
+                    standard HTTP methods like GET (Read), POST (Create), PUT (Update), and DELETE (Delete).
                 </li>
 
                 <li class="mb-4">
 
                     <bold class="font-semibold mt-6">HTTP Methods:</bold> REST APIs use standard HTTP methods for CRUD
-                    (Create, Read, Update, Delete) operations
-                    on
-                    resources. For example, GET for retrieving data, POST for creating new data, PUT for updating data,
-                    and
-                    DELETE for removing data.
+                    operations on resources.
+                </li>
+
+                <li class="mb-4">
+
+                    <bold class="font-semibold mt-6">Representation:</bold> Resources can have multiple representations
+                    (e.g., JSON or XML), and clients can choose the representation they prefer.
                 </li>
 
                 <li class="mb-4">
 
                     <bold class="font-semibold mt-6">Stateless Communication:</bold> REST APIs use stateless
-                    communication, meaning that each request from a
-                    client to a
-                    server is independent, and the server doesn't maintain any client state between requests. This makes
-                    the API
-                    scalable and easy to cache.
+                    communication, making each request independent.
                 </li>
 
-                <li class="mb-4">
-
-                    <bold class="font-semibold mt-6">JSON or XML:</bold> Data is typically exchanged between the client
-                    and server in a format like JSON or XML,
-                    making
-                    it easy for different systems to understand and work with the data.
-                </li>
 
             </ul>
             <p class="mb-4 text-xl">
-                RESTful APIs are widely used for building web services and are the foundation of many web
-                applications and
-                services, providing a straightforward and scalable way to interact with data over the internet.
+                In the realm of HTTP, there are five commonly used methods in a REST-based architecture: POST, GET, PUT,
+                PATCH, and DELETE. These methods correspond to create, read, update, and delete (CRUD) operations,
+                respectively.
 
             </p>
 
+            <ul class="text-xl list-disc ml-5">
 
-            <figure>
-                <img class="w-full border-2 mt-8" src="./images/rest-api.png" alt="rest-api">
-                <figcaption class="mb-8">Fig. 3: REST API</figcaption>
-            </figure>
+                <li class="mb-4">
+                    <bold class="font-semibold mt-6">GET:</bold> The HTTP GET method is employed to retrieve a
+                    representation of a resource. In a successful
+                    scenario, GET returns a representation in XML or JSON and an HTTP response code of 200 (OK). In case
+                    of
+                    an error, it typically returns a 404 (NOT FOUND) or 400 (BAD REQUEST).
+                </li>
+
+                <li class="mb-4">
+                    <bold class="font-semibold mt-6">POST:</bold> The POST verb is primarily used to create new
+                    resources, particularly subordinate resources.
+                    Upon
+                    successful creation, it returns an HTTP status of 201, along with a Location header containing a
+                    link to
+                    the newly-created resource. It's important to note that POST is neither safe nor idempotent.
+                </li>
+
+                <li class="mb-4">
+                    <bold class="font-semibold mt-6">PUT:</bold> PUT is used for updating resources. However, it can
+                    also create a resource when the client
+                    chooses
+                    the resource ID, rather than the server. If a PUT request is made to a URI containing a non-existent
+                    resource ID, it creates that resource. On a successful update, PUT returns a status of 200 (or 204
+                    if no
+                    content is returned in the body). When used for creation, it returns an HTTP status of 201. PUT is
+                    not
+                    considered a safe operation but is idempotent.
+                </li>
+
+                <li class="mb-4">
+                    <bold class="font-semibold mt-6">PATCH:</bold> This method is used to modify resources. A PATCH
+                    request only needs to contain the changes to
+                    the
+                    resource, not the entire resource. It resembles PUT but uses a set of instructions in the body to
+                    describe how the server's resource should be modified to create a new version. PATCH is neither safe
+                    nor
+                    idempotent.
+                </li>
+
+                <li class="mb-4">
+                    <bold class="font-semibold mt-6">DELETE:</bold> DELETE is employed to delete a resource identified
+                    by a URI. Upon successful deletion, it
+                    returns an HTTP status of 200 (OK) along with a response body.
+                </li>
+            </ul>
         </article>
-
-
     </main>
-
 
     <!-- Scripts -->
     <script src="./blog.js"></script>
